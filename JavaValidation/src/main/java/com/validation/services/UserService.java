@@ -24,6 +24,6 @@ public class UserService {
 	}
 
 	public User getUserbyId(Long id) {
-		return userRep.findByUserId(id);
+		return userRep.findById(id).get();
 	}
 }

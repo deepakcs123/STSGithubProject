@@ -8,6 +8,6 @@ import com.validation.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	User findByUserId(Long id);
+	//User findByUserId(Long id);
 
 }
