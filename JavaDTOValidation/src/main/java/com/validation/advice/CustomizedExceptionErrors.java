@@ -32,14 +32,17 @@ public class CustomizedExceptionErrors {
 		return new ResponseEntity<String>("Enter valid id", HttpStatus.BAD_REQUEST);
 	}
 
-	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-	public ResponseEntity<String> handleHttpRequestMethodNotSupportedException(
-			HttpRequestMethodNotSupportedException ex) {
-		return new ResponseEntity<String>("method not supported for URL", HttpStatus.METHOD_NOT_ALLOWED);
-	}
+	
+	  @ExceptionHandler(HttpRequestMethodNotSupportedException.class) public
+	  ResponseEntity<String> handleHttpRequestMethodNotSupportedException(
+	  HttpRequestMethodNotSupportedException ex) { return new
+	  ResponseEntity<String>("method not supported for URL",
+	  HttpStatus.METHOD_NOT_ALLOWED); }
+	 
 
 	@ExceptionHandler(PowercutException.class)
 	public ResponseEntity<String> handlePowercutException(PowercutException ex) {
 		return new ResponseEntity<String>((ex.getErrorCode() + ": " + ex.getErrorMsg()), HttpStatus.BAD_REQUEST);
 	}
+	
 }
