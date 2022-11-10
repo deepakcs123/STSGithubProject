@@ -1,5 +1,6 @@
 package com.javajwt.advice;
 
+import java.nio.file.AccessDeniedException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -47,5 +48,9 @@ public class ApplicationExceptionAdvice extends ResponseEntityExceptionHandler {
 		// TODO Auto-generated method stub
 		return new ResponseEntity<Object>(("Enter Valid Values "), HttpStatus.BAD_REQUEST);
 
+	}
+	@ExceptionHandler(AccessDeniedException.class)
+	private ResponseEntity<String> handleAccessDeniedException(AccessDeniedException ex) {
+		return new ResponseEntity<String>(("Access not allowed"), HttpStatus.BAD_GATEWAY);
 	}
 }
